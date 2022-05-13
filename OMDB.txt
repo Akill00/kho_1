@@ -1,0 +1,38 @@
+5.1
+SELECT Product.ProductName
+FROM Product 
+WHERE CategoryID = 'C02'
+
+5.2 
+SELECT Warehouse.*
+FROM Warehouse
+WHERE CategoryID = 'C01'
+
+5.3
+SELECT B.ProductName,A.*
+FROM Warehouse A,Product B
+WHERE ProductName = 'Áo Thun'
+AND A.CategoryID = B.CategoryID
+
+Category ( CategoryID, CategoryName )
+CREATE TABLE Category
+(
+	CategoryID Char(3) PRIMARY KEY,
+	CategoryName varChar(30)
+)
+
+Product ( ProductID, ProductName, UnitPrice, CategoryID )
+CREATE TABLE Product
+(
+	ProductID Char(3) PRIMARY KEY,
+	ProductName varChar(30),
+	UnitPrice REAL,
+	CategoryID char(3) 
+)
+
+
+Customer ( CustomerID, CustomerName, CustomerAddress )
+Order ( OrderID, OrderDate char(10), RequiredDate char(10), CustomerID )
+ OrderDetail ( OrderID, ProductID, OrderQuantity )
+Delivery ( DeliveryID, DeliveryDate, OrderID
+DeliveryDetail ( DeliveryID, ProductID, DeliveryQuantity )

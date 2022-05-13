@@ -1,0 +1,71 @@
+cắt phải xóa trắng 
+char *CatPhai(char *s) {
+	while (s[strlen(s)-1] == ' '){
+		s[strlen(s)-1]='\0';
+	}
+	return s;
+}
+
+==================================================
+xóa hết 
+char *CatHet(char *s))
+{
+    for(int i=0;i<strlen(s);i++)
+		if(s[i]==' '&& s[i+1]==' ')
+		{
+			cat(s,i);
+			i--;
+		}
+    if(s[0]==' ')
+		cat(s,0);
+    if(s[strlen(s)-1]==' ')
+		cat(s,strlen(s)-1);
+}
+
+
+==================================================
+10. char *XoaTrai(char *s, char x, int pos) xóa các ký tự x trước vị trí pos. 
+
+char *XoaTrai(char *s, char x, int pos){
+	for (int i=pos-1;i>=0;i--)
+		if (s[i]==x)
+			strcpy(s+i,s+i+1);
+	return s;
+}
+
+==================================================
+11. char *XoaPhai(char *s, char x, int pos) xóa các ký tự x từ vị trí pos. 
+char *XoaPhai(char *s, char x, int pos){
+	for (int i=strlen(s)-1;i>=pos;i--)
+		if (s[i]==x)
+			strcpy(s+i,s+i+1);
+	return s;
+====================================================
+12. char *XoaHet(char *s, char x) xóa các ký tự chỉ định x.
+==================================================
+VD xoa tại vị trí 3 dài 2 ki tự
+char *Xoa(char *s, int pos, int len){
+	strcpy(s+pos-1,s+pos-1+len);
+	return s;
+}
+
+==================================================
+16. char *ChenGiua(char *s, char *subs, int pos) chèn thêm subs vào s tại vị trí chỉ định pos.
+char *ChenGiua(char *s, char *subs, int pos)
+{
+	char str1 [100];str2[100];
+	strncpy (str1,s,pos);
+	strncpy (str2,s+pos,strlen(s)-pos);
+	strcat (str1,subs);
+	strcat (str1,str2);
+	strcpy (s,str1);
+	return s ;
+}
+or
+char *ChenGiua(char *s,char *subs,int pos){
+	strcat(subs, s+pos-1);
+	strcpy(s+pos-1,subs);
+	return s;
+
+==================================================
+17. char *TrichTrai(char *s, int len). trích chuỗi con từ chuỗi s (từ bên trái sang dài len ký tự)

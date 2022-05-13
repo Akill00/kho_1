@@ -1,0 +1,22 @@
+Đồ thị biểu diễn được rất nhiều cấu trúc, 
+nhiều bài toán thực tế có thể được biểu diễn bằng đồ thị. 
+Ví dụ, cấu trúc liên kết của một website có thể được biểu diễn bằng 
+một đồ thị có hướng như sau: các đỉnh là các trang web hiện có tại website, 
+tồn tại một cạnh có hướng nối từ trang A tới trang B khi và chỉ khi A có chứa 
+1 liên kết tới B
+
+
+Đồ thị vô hướng là một đồ thị mà các cạnh của nó không có hướng. Mỗi cạnh luôn là một mối quan hệ hai chiều, và mỗi cạnh có thể được duyệt qua theo hai hướng.[1] Đồ thị có hướng là trường hợp ngược lại của đồ thị vô hướng, với các cạnh có hướng, xuất phát từ hoặc kết thúc tại một đỉnh, thông thường ký hiệu bằng dấu mũi tên.
+
+Cho đồ thị {\displaystyle G=(V,E)}{\displaystyle G=(V,E)}. Nếu chúng ta không phân biệt thứ tự của cặp đỉnh liên kết với mỗi cạnh thì sẽ có được đồ thị vô hướng.[2] Đồ thị vô hướng {\displaystyle G=(V,E)}{\displaystyle G=(V,E)} được định nghĩa bởi:
+
+tập hợp V ≠ ∅ được gọi là tập các đỉnh của đồ thị;
+tập hợp {\displaystyle E}E là tập các cạnh của đồ thị.
+mỗi cạnh e ∈ E được liên kết với một cặp đỉnh {i, j} ⊆ X không phân biệt thứ tự.
+
+
+Đa đồ thị vô hướng G= (V, E) bao gồm V là tập các đỉnh khác rỗng, và
+E là tập các cặp không có thứ tự gồm hai phần tử khác nhau của V gọi là
+các cạnh. Hai cạnh e1 và e2 được gọi là cạnh lặp (bội hay song song) nếu
+chúng cùng tương ứng với một cặp đỉnh.
+

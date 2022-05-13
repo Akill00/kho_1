@@ -1,0 +1,82 @@
+//tìm số lớn nhất trong n số (n nhập từ bàn phím)
+// vòng lập số n
+int n,k,max;
+	cout<<"Nhap n: ";
+	cin >>n;
+	cout <<"Nhap so thu 1: ";
+	cin>>max;
+	for(int i=2;i<=n;i++){
+		cout <<"Nhap so thu "<<i<<": ";
+		cin>>k;
+		if(k>max)
+			max=k;
+	}
+	cout <<"So LN = "<<max;
+
+nhập ngày tháng năm
+#include<iostream>
+using namespace std;
+int main(){ 
+int x; cout << "Nhap thang "; cin >> x;
+switch (x) {
+case 1:
+case 3: 
+case 7:
+case 8:
+case 10:
+case 12: cout << “31 Ngay"; break;
+case 4:
+case 6:
+case 9:
+case 11: cout << “30 Ngay"; break;
+case 2:
+	{
+	if((year%4==0 && year%100!=0) || year%400==0)
+	{ cout<<"Thang co 29 ngay";
+	}	
+	else 
+	cout<<"thang co 28 ngay";break;
+	}
+default: cout << “Thang hong hop le";
+}
+
+
+tính điểm trung bình và xếp hạng
+#include<iostream>
+using namespace std;
+int main(){ 
+	float toan,ly,hoa,dtb;
+	cout<<"Nhap diem toan, ly, hoa:";
+	cin>>toan>>ly>>hoa;
+	dtb = (toan + ly + hoa) / 3;
+	cout<<"dtb = "<< dtb<<endl;
+	if (dtb < 5)
+	    cout<<"Kem";
+    else if (dtb < 7
+    	cout<<"TB";
+    else if(dtb < 8)
+    	cout<<"Kha";
+    else if(dtb < 10)
+        cout<<"Gioi";
+    else
+    	cout<<"Xs";
+}
+
+
+
+7. Nhập tiêu thụ, định mức, đơn giá. Tính tiền điện biết:
+       1đm<tiêu thụ<=2đm phạt thêm 10%
+       2đm<tiêu thụ<=3đm phạt thêm 20%
+       tt>3đm phạt thêm 30%
+
+
+#####Giai thuat tach cac ky so cua so
+1   for(;n!=0;n=n/10){
+         r=n%10;
+         //Xu lý so r tuy bai toan
+    }
+2 	while (n!=0){
+		r=n%10;
+		//Xu lý so r tuy bai toan
+		n=n/10;
+   }

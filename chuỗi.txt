@@ -1,0 +1,45 @@
+con trỏ.
+
+int main() {
+    int n, *p ;
+    cout << "Cho biet so luong phan tu cua mang: "; 
+    cin >> n ;
+    p = new int[n] ;	
+    for (int i=0; i<n; i++) { // Xu lý theo kieu mang thong thuong
+	    cout << "P tu thu " << i << ": " ; 
+		cin >> p[i];	
+    }
+    for (int i=0; i<n-1; i++) //Xu lý mang bang con tro voi ten mang
+  	  for (int j=i+1; j<n; j++) 
+	     if (*(p+i) > *(p+j)) {
+	       int tam = *(p+i); 
+		   *(p+i) = *(p+j); 
+		   *(p+j) = tam; 
+	   }	
+	for (int *q=p; q<p+n; q++) //xu lý mang ban
+	for (int *q=p; q<p+n; q++) //xu lý mang bang 1 con tro khac
+		cout << *q <<"\t"; 
+	delete[] p;  // Thu h?i b? nh?
+}
+==================================================
+cần nhớ 
+a[i] <=> *(a+i)
+int *a= new int[n];
+==================================================
+1. int DemTu(char *s): đếm số từ trong chuỗi s (các từ cách nhau bởi ký tự trắng).
+
+int Dem(char *s)
+{
+	int n=strlen(s);
+	int dem=0;
+	if(s[0]!=' ')
+		dem=1;
+	for( int i=0;i<n-1;i++)
+	{
+		if(s[i]==' ' && s[i+1]!=' ')
+			dem++;
+	}
+	return dem;
+}
+
+2. void XuatTu(char *s) xuất các từ trên các dòng liên tiếp.

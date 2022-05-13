@@ -1,0 +1,139 @@
+ Khai báo kiểu dữ liệu biểu diễn khái niệm phân số (số nguyên) và định nghĩa các hàm 
+     a. Nhập/xuất 
+     b. Tổng, hiệu, tích, thương (dưới dạng tối giản)
+     c. So sánh 2 phân số (bằng nhau, lớn hơn,...)
+int SoSanhPS(PS p1,PS p2){
+	PS t;
+	t.mau=p1.mau*p2.mau;
+	if(p1.tu*p2.mau>p2.tu*p1.mau){
+		return 1;
+	}
+	if(p1.tu*p2.mau==p2.tu*p1.mau){
+		return 0;
+	}
+	if(p1.tu*p2.mau<p2.tu*p1.mau){
+		return -1;
+	}
+}
+
+2. Khai báo  kiểu dữ liệu biểu diễn khái niệm điểm trong mặt phẳng Oxy và định nghĩa các hàm:
+     a. Nhập/xuất.
+struct DIEM{
+	int x,y;
+}
+void Nhap(DIEM d){
+	cout << "nhap x, y của diem";
+	cin>>d.x >>d.y;
+
+}
+void Xuat(DIEM d){
+	cout<<"("<<d.x<<","<<d.y<<")"; 
+
+}
+
+	b, khoảng cách giữa 2 điểm.
+float KC(DIEM d1,DIEM d2){
+	float d;
+	return sqrt((d2.x-d1.x)*(d2.x-d1.x)+(d2.y-d1.y)*(d2.y-d1.y))
+	
+}
+
+
+4. Hãy khai báo kiểu dữ liệu để biểu diễn thông tin của 1 tỉnh (TINH). Biết rằng một tỉnh gồm những thành phần sau:
+         - Mã tỉnh: Kiểu số nguyên 2 byte
+         - Tên tỉnh: Chuỗi tối đa 30 ký tự
+         - Diện tích: Kiểu số thực
+     Sau đó viết hàm nhập, xuất cho kiểu dữ liệu này
+struct Tinh{
+	int matinh;
+	char tentinh;
+	float dientich;
+}
+
+void Nhap(Tinh &d){
+	cout<<"Nhap thong tin cua tinh :";
+	cin>>d.matinh>>d.tentinh>>d.dientich;
+}
+
+void Xuat(DIEM d){
+	cout<<"Ma tinh:"<<d.matinh<<endl;
+	cout<<"Ten tinh:"<<d.matinh<<endl;
+	cout<<"Dien tich:"<<d.dientich<<endl;
+}
+
+viet ham void NhapDa(TINH *a, int n)
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+struct TINH{
+	int ma;
+	char ten[30];
+	float dt;
+};
+void Nhap(TINH &t){
+	cout <<"Nhap ma tinh: ";
+	cin>>t.ma;
+	cout <<"Nhap ten tinh: ";
+	cin.ignore();
+	cin.getline(t.ten,30);
+	cout<<"Nhap DT: ";
+	cin>>t.dt;
+}
+void Xuat(TINH t){
+	cout <<"Ma tinh: "<<t.ma<<endl;
+	cout <<"Ten tinh: "<<t.ten<<endl;
+	cout<<"DT: "<< t.dt <<endl;
+}
+void NhapDS(TINH *a, int n){
+	a=new TINH[n];
+	for(int i=0; i<n;i++){
+		cout <<"Nhap tinh thu "<<i+1<<": ";
+		Nhap(a[i]);
+	}
+}
+TINH DTMax(TINH *a, int n){
+	TINH t=a[0];
+	for (int i=1; i<n; i++)
+		if(a[i].DT>t.DT){
+			t=a[i];
+		}
+	return t;
+}
+TINH DTmin(TINH *a, int n){
+	TINH t=a[0];
+	for (int i=1; i<n; i++)
+		if(a[i].DT<t.DT){
+			t=a[i];
+		}
+	return t;
+}
+void SapXep(TINH *a, int n){
+	for(int i=0; i<n-1; i++)
+		for(int j=i+1; j<n;j++)
+			if(strcmp(a[i].ten, a[j].ten)>0){
+				TINH t=a[i];
+				a[i]=a[j];
+				a[j]=t;
+			}
+}
+void InDS(TINH *a, int n){
+	for (int i=0; i<n; i++)
+		cout<<a[i].ma<<'\t'<<a[i].ten<<'\t'<<a[i].dt<<endl;
+}
+int main(){
+	TINH *a, t;
+	int n;
+	cout<<"Nhap so tinh: ";
+	cin>>n;
+	NhapDS(a,n);
+	t=DTMax(a,n);
+	cout<<"Tinh co dien tich lon nhat:\n";
+	Xuat(t);
+	t=DTmin(a,n);
+	cout<<"\nTinh co dien tich be nhat:\n";
+	Xuat(t);
+	SapXep(a,n);
+	InDS(a,n);
+}
+

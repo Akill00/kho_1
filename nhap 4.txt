@@ -1,0 +1,44 @@
+     b. Tìm vị trí số nguyên tố đầu tiên (nếu có) xuất hiện trong mảng
+      Lưu ý: hàm LaSNT xem như đã có sẵn
+
+int TimSNT(int a[], int n)
+
+int TimSNT(int a[], int n){
+   for(int i=0; i<n; i++)
+      if(LaSNT(a[i])==1)
+         return i;
+   return -1;
+}
+
+
+
+==================================================
+Tìm số dương nhỏ nhất trong mảng
+
+int SoDuongMin(int a[],int n) {
+      int min=0, int i;
+      for (i =0; i < n; i++) 
+	if (a[i] > 0){
+	   min = a[i];
+	   break; 
+                 }
+       for(; i < n; i++) 
+            if(a[i]>0 && a[i]<min)
+                   min = a[i];
+       return min;
+}
+
+==================================================
+ e. Tìm pt trong mảng có giá trị cách xa giá trị x nhất.
+     Khoảng cách từ x đến n= abs(n-x)
+int KCMax(int a[], int n, int x)
+
+int KCMax(int a[], int n, int x){
+	int max = 0;
+	for (int i=1; i<n; i++)
+	     if (abs(max-x) > abs(a[i]-x)){
+	         max = i;
+	return max;
+}
+==================================================
+

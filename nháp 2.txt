@@ -1,0 +1,52 @@
+tam giác pascal;
+
+#include<iostream>
+using namespace std;
+int tgpascal(int k, int n) 
+{
+    if (k == 0 || k == n) return 1;
+    if (k == 1) return n;
+    return tgpascal(k - 1, n - 1) + tgpascal(k, n - 1);
+}
+int main()
+{
+    int n;
+    cout << "nhap n: ";
+    cin >> n;
+    for (int i = 0; i < n; i++) 
+    {
+        
+        for (int j = 0; j <= i; j++) 
+	{
+            cout << tgpascal(j, i) << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+ 
+=========================================================
+
+đổi số thập phân sang nhị phân
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    long dec,rem,i=1,sum=0;
+    cout<<"nhap so thap phan:";
+    cin>>dec;
+    do
+    {
+        rem=dec%2;
+        sum=sum + (i*rem);
+        dec=dec/2;
+        i=i*10;
+    }while(dec>0);
+    cout<<"da chuyen sang nhi phan:"<<sum<<endl;
+
+    return 0;
+}
+
+==================================================
+
